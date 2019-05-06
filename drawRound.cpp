@@ -32,5 +32,4 @@ void DrawPrimitivesTest::ccDrawRoundRect( Point origin, Point destination, float
     Point * pPolygonPtArr = new Point[dwPolygonPtMax];
     Point * thisPolygonPt = pPolygonPtArr;
     int aa = 0;
-
 }
