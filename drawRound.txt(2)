@@ -1,0 +1,17 @@
+    for(unsigned int i = 0; i <= segments; ++i, ++thisPolygonPt, --thisVertices)
+    {
+        thisPolygonPt->x    = tagCenter.x - thisVertices->x;
+        thisPolygonPt->y    = tagCenter.y - thisVertices->y;
+        ++aa;
+    }
+    
+    if(bFill){
+        DrawPrimitives::drawSolidPoly(pPolygonPtArr, dwPolygonPtMax, color);
+    }else
+    {
+        DrawPrimitives::setDrawColor4F(color.r, color.g, color.b, color.a);
+        DrawPrimitives::drawPoly(pPolygonPtArr, dwPolygonPtMax, true);
+    }
+    
+    CC_SAFE_DELETE_ARRAY(vertices);
+    CC_SAFE_DELETE_ARRAY(pPolygonPtArr);
