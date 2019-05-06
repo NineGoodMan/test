@@ -1,0 +1,34 @@
+//左上角
+    tagCenter.x        = minX + radius;
+    tagCenter.y        = maxY - radius;
+    thisVertices    = vertices;
+    for(unsigned int i = 0; i <= segments; ++i, ++thisPolygonPt, ++thisVertices)
+    {
+        thisPolygonPt->x    = tagCenter.x - thisVertices->x;
+        thisPolygonPt->y    = tagCenter.y + thisVertices->y;
+        ++aa;
+    }
+    //右上角
+    tagCenter.x        = maxX - radius;
+    tagCenter.y        = maxY - radius;
+    thisVertices    = vertices + segments;
+    for(unsigned int i = 0; i <= segments; ++i, ++thisPolygonPt, --thisVertices)
+    {
+        thisPolygonPt->x    = tagCenter.x + thisVertices->x;
+        thisPolygonPt->y    = tagCenter.y + thisVertices->y;
+        ++aa;
+    }
+    //右下角
+    tagCenter.x        = maxX - radius;
+    tagCenter.y        = minY + radius;
+    thisVertices    = vertices;
+    for(unsigned int i = 0; i <= segments; ++i, ++thisPolygonPt, ++thisVertices)
+    {
+        thisPolygonPt->x    = tagCenter.x + thisVertices->x;
+        thisPolygonPt->y    = tagCenter.y - thisVertices->y;
+        ++aa;
+    }
+    //左下角
+    tagCenter.x        = minX + radius;
+    tagCenter.y        = minY + radius;
+    thisVertices    = vertices + segments;
