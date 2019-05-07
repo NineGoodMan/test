@@ -1,0 +1,4 @@
+要跨文件（同一个工程中）使用同一个变量（值同步改变），变量声明和定义方法：
+例：首先在aaaa.c定义全局变量：int y，并在aaaa.h中声明：extern int y;
+在另外一个xxx.c文件中想要使用上述变量，包含头文件aaaa.h即可使用。
+参考文章：http://blog.csdn.net/little_bobo/article/details/78351998
